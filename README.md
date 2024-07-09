@@ -1,6 +1,4 @@
-# SAP Content Hub
 
-Temporary location prior to enabling https://github.tools.sap/UDEx/dx-web
 
 ## Environments
 
