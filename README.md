@@ -4,8 +4,8 @@ Temporary location prior to enabling https://github.tools.sap/UDEx/dx-web
 
 ## Environments
 
-- Preview: https://main--hlx-test--urfuwo.hlx.page/
-- Live: https://main--hlx-test--urfuwo.hlx.live/
+- Preview: https://main--customedge--sobhanishikha007.hlx.page/
+- Live: https://main--customedge--sobhanishikha007.hlx.live/
 
 ## Documentation
 
