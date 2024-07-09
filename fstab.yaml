@@ -1,2 +1,7 @@
 mountpoints:
-  /: https://drive.google.com/drive/folders/1wGEZKdV7UPN0ulnj5lsBHsr9fsLsv0nN
+  /: https://sap.sharepoint.com/sites/207899/Shared%20Documents/website
+
+folders:
+  /topics/: /topics/topic-template
+  /news/: /news/news-template
+  /author/: /author/author-template
