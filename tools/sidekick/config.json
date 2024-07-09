@@ -1,0 +1,24 @@
+{
+    "project": "SAP",
+    "plugins": [
+      {
+        "id": "library",
+        "title": "Library",
+        "environments": ["edit"],
+        "url": "/tools/sidekick/library.html",
+        "includePaths": ["**.docx**"]
+      },
+      {
+        "id": "tools",
+        "title": "Tools",
+        "isContainer": true
+      },
+      {
+        "containerId": "tools",
+        "title": "Preflight Checker",
+        "id": "preflight",
+        "environments": ["dev", "preview", "live"],
+        "event": "preflight"
+      }
+    ]
+  }

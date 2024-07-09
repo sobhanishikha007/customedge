@@ -9,8 +9,10 @@
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:title" content="Page not found">
-  <script src="/scripts/scripts.js" type="module" crossorigin="use-credentials"></script>
+  <script src="/aemedge/scripts/scripts.js" type="module" crossorigin="use-credentials"></script>
   <script type="module">
+    import { sampleRUM } from '/aemedge/scripts/aem.js';
+
     window.addEventListener('load', () => {
       if (document.referrer) {
         const { origin, pathname } = new URL(document.referrer);
@@ -24,13 +26,11 @@
           btnContainer.append(backBtn);
         }
       }
+      sampleRUM('404', { source: document.referrer, target: window.location.href });
     });
   </script>
-  <script type="module">
-    import { sampleRUM } from '/scripts/aem.js';
-    sampleRUM('404', { source: document.referrer });
-  </script>
-  <link rel="stylesheet" href="/styles/styles.css">
+  <link rel="stylesheet" href="/aemedge/styles/css_variables.css"/>
+  <link rel="stylesheet" href="/aemedge/styles/styles.css">
   <style>
     main.error {
       min-height: calc(100vh - var(--nav-height));
@@ -46,7 +46,7 @@
       font-family: var(--fixed-font-family);
     }
   </style>
-  <link rel="stylesheet" href="/styles/lazy-styles.css">
+  <link rel="stylesheet" href="/aemedge/styles/lazy-styles.css">
 </head>
 
 <body>

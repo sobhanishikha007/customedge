@@ -1,0 +1,10 @@
+main .article-tags {
+    margin-top: var(--udexSpacer20);
+}
+
+main .article-tags div.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}

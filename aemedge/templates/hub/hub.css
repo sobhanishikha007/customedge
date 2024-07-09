@@ -1,0 +1,143 @@
+.hub-l2.appear,
+.hub-l1.appear {
+  @media (width >= 980px) {
+    display: grid;
+  }
+
+  @media (width >= 1600px) {
+    & {
+      --udexGridMargins: 246px;
+    }
+  }
+
+  & > * {
+    transition: margin 0.3s ease-in-out;
+  }
+
+  & :is(.header) {
+    display: contents;
+  }
+
+  & > header {
+    grid-area: header;
+  }
+
+  & > aside {
+    grid-area: side-nav;
+
+    @media (width >= 980px) {
+      margin: 0 0 0 var(--udexGridMargins);
+      min-width: 200px;
+    }
+  }
+
+  & > main {
+    display: flex;
+    flex-direction: column;
+    grid-area: main-content;
+
+    & > :not(.hero-container, .title-banner-container) {
+      & > * {
+        margin: 0 var(--udexGridMargins);
+      }
+    }
+
+    & > :not(:last-child, .hero-container) {
+      padding-block-end: var(--udexSpacer56);
+    }
+
+    & > :last-child {
+      padding-block-end: var(--udexSpacer84);
+    }
+  }
+
+  & > footer {
+    grid-area: footer;
+  }
+}
+
+.hub-l1.appear {
+  grid-template-areas:
+    'header'
+    'main-content'
+    'footer';
+
+  & > main {
+    @media (width >= 980px) {
+      & > :not(.hero-container) {
+        padding-inline: var(--udexGridMargins);
+
+        & > * {
+          margin: unset;
+        }
+      }
+    }
+  }
+
+  & .button-container:has(> a) {
+    margin-block: 0;
+    padding-block-start: var(--udexSpacer24);
+
+    &:not(:only-child) {
+      padding-block: var(--udexSpacer24) var(--udexSpacer56);
+    }
+
+    & + h2 {
+      padding-block-start: var(--udexSpacer56);
+      margin-block-start: 0;
+    }
+  }
+}
+
+.hub-l2.appear {
+  grid-template:
+    'header' 60px
+    'main-content' auto
+    'footer' auto
+    / 1fr;
+
+  & > main {
+    @media (width >= 980px) {
+      & .hero-container + .section {
+        padding-block-start: 84px;
+      }
+
+      & > :not(.hero-container, .title-banner-container) {
+        padding-inline: var(--udexGridMargins);
+
+        & > * {
+          margin: unset;
+        }
+      }
+    }
+  }
+
+  &:has(aside) {
+    --hero-margin--left: 0;
+    --hero-margin--right: 0;
+
+    grid-template:
+      'header header' 60px
+      'side-nav main-content' auto
+      'footer footer' auto
+      / min-content 1fr;
+
+    & > main {
+      @media (width >= 640px) {
+        & > * {
+          --hero-margin--left: 48px;
+        }
+      }
+
+      @media (width >= 980px) {
+        & > :not(.hero-container, .title-banner-container) {
+          padding-inline: var(--udexGridGutters) var(--udexGridMargins);
+
+          & > * {
+            margin: unset;
+          }
+        }
+      }
+    }
+  }
+}
